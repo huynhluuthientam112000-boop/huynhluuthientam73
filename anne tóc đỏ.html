@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Anne Tóc Đỏ Dưới Chái Nhà Xanh</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Times New Roman",serif;
+  line-height:1.9;
+  color:#2c2c2c;
+
+  background:
+    radial-gradient(circle at top,
+      rgba(255,250,235,0.9),
+      rgba(220,235,245,0.85),
+      rgba(185,210,220,0.9)
+    ),
+    url("https://i.pinimg.com/736x/fe/d8/bf/fed8bfee9a4946ee5498f6f9428cb081.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+.fall-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+.leaf{
+  position:absolute;
+  width:55px;
+  height:80px;
+  border-radius:50% 50% 45% 45%;
+  top:-15%;
+  opacity:0.85;
+  animation:leafFly linear infinite;
+  filter:blur(0.3px);
+}
+
+.pink{ background:linear-gradient(#ffd1dc,#ff9eb5);}
+.yellow{ background:linear-gradient(#fff1b6,#ffd86b);}
+.peach{ background:linear-gradient(#ffd8b5,#ffb47d);}
+
+.spark{
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:rgba(255,255,220,0.9);
+  top:-10%;
+  animation:sparkMove linear infinite;
+  box-shadow:0 0 15px rgba(255,255,200,.9);
+}
+.leaf:nth-child(1){left:5%;animation-duration:22s;}
+.leaf:nth-child(2){left:18%;animation-duration:26s;}
+.leaf:nth-child(3){left:33%;animation-duration:30s;}
+.leaf:nth-child(4){left:48%;animation-duration:24s;}
+.leaf:nth-child(5){left:65%;animation-duration:28s;}
+.leaf:nth-child(6){left:82%;animation-duration:32s;}
+
+.spark:nth-child(7){left:12%;animation-duration:18s;}
+.spark:nth-child(8){left:37%;animation-duration:22s;}
+.spark:nth-child(9){left:58%;animation-duration:26s;}
+.spark:nth-child(10){left:78%;animation-duration:20s;}
+
+@keyframes leafFly{
+  0%{
+    transform:translate(0,0) rotate(0deg);
+  }
+  40%{
+    transform:translate(100px,40vh) rotate(180deg);
+  }
+  70%{
+    transform:translate(-80px,75vh) rotate(360deg);
+  }
+  100%{
+    transform:translate(160px,130vh) rotate(520deg);
+    opacity:0;
+  }
+}
+
+@keyframes sparkMove{
+  to{
+    transform:translate(120px,120vh);
+    opacity:0;
+  }
+}
+
+header{
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.15)),
+    url("https://i.pinimg.com/736x/79/43/43/794343845fd386e3eb67134a60613890.jpg");
+  background-size:cover;
+  background-position:center;
+  padding:120px 30px;
+  text-align:center;
+  color:white;
+  position:relative;
+  z-index:2;
+}
+
+header h1{
+  font-size:78px;
+  margin-bottom:20px;
+  text-shadow:0 10px 30px rgba(0,0,0,.45);
+}
+
+header p{
+  font-size:26px;
+}
+
+main{
+  width:75%;
+  margin:70px auto;
+  position:relative;
+  z-index:2;
+}
+
+section{
+  background:rgba(255,255,255,0.78);
+  margin-bottom:50px;
+  padding:48px;
+  border-radius:28px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 16px 40px rgba(0,0,0,.18);
+  transition:.5s;
+}
+
+section:hover{
+  background:rgba(255,255,255,0.96);
+  box-shadow:
+    0 0 40px rgba(255,235,190,.9),
+    0 26px 55px rgba(0,0,0,.25);
+  transform:translateY(-10px);
+}
+
+.intro{
+  display:flex;
+  gap:45px;
+  align-items:center;
+}
+
+.intro img{
+  max-width:250px;
+  border-radius:18px;
+  box-shadow:0 14px 32px rgba(0,0,0,.3);
+}
+
+h2{
+  color:#5a7d7c;
+  border-bottom:2px solid #cce3de;
+  padding-bottom:10px;
+  margin-bottom:24px;
+}
+
+.fun-facts{
+  display:flex;
+  gap:24px;
+}
+
+.fact-box{
+  flex:1;
+  background:rgba(255,255,255,0.72);
+  padding:28px;
+  border-radius:22px;
+  border-top:5px solid #6b9080;
+  backdrop-filter:blur(6px);
+  transition:.45s;
+}
+
+.fact-box:hover{
+  background:rgba(255,255,255,0.98);
+  box-shadow:
+    0 0 32px rgba(190,230,255,.85),
+    0 22px 45px rgba(0,0,0,.25);
+  transform:translateY(-8px);
+}
+
+blockquote{
+  background:rgba(235,250,250,0.95);
+  border-left:6px solid #6b9080;
+  padding:28px;
+  font-style:italic;
+  border-radius:18px;
+}
+
+footer{
+  text-align:center;
+  padding:24px;
+  background:#6b9080;
+  color:white;
+  position:relative;
+  z-index:2;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  main{width:90%;}
+  .intro{flex-direction:column;}
+  .fun-facts{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="fall-layer">
+  <div class="leaf pink"></div>
+  <div class="leaf yellow"></div>
+  <div class="leaf peach"></div>
+  <div class="leaf pink"></div>
+  <div class="leaf yellow"></div>
+  <div class="leaf peach"></div>
+
+  <div class="spark"></div>
+  <div class="spark"></div>
+  <div class="spark"></div>
+  <div class="spark"></div>
+</div>
+
+<header>
+  <h1>Anne Tóc Đỏ Dưới Chái Nhà Xanh</h1>
+  <p><strong>Lucy Maud Montgomery</strong></p>
+</header>
+
+<main>
+
+<section>
+  <h2>Giới thiệu tác phẩm</h2>
+  <div class="intro">
+    <img src="https://i.pinimg.com/736x/39/2d/04/392d0482b924e7312d17313d389c62a6.jpg">
+    <p>
+      <em>Anne Tóc Đỏ Dưới Chái Nhà Xanh</em> là câu chuyện dịu dàng về Anne Shirley – một cô bé mồ côi
+      với mái tóc đỏ rực, trí tưởng tượng phong phú và trái tim tràn đầy yêu thương.
+      Từ một sự nhầm lẫn, Anne được đưa đến Green Gables và từng bước biến nơi đây
+      thành mái nhà thực sự bằng sự chân thành, lạc quan và niềm tin mãnh liệt vào cái đẹp.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Cảm nhận cá nhân</h2>
+  <p>
+    Anne Shirley là nhân vật mang đến cho người đọc cảm giác vừa thân quen vừa đáng yêu.
+    Trí tưởng tượng bay bổng, sự nhạy cảm và niềm khao khát được yêu thương của Anne
+    khiến câu chuyện trở nên ấm áp và đầy tính nhân văn.
+  </p>
+  <p>
+    Tác phẩm không chỉ kể về tuổi thơ mà còn là hành trình trưởng thành,
+    nơi con người học cách yêu thương, chấp nhận và chữa lành những tổn thương.
+    Anne Tóc Đỏ giống như một làn gió dịu, nhắc nhở chúng ta rằng
+    cuộc sống sẽ trở nên đẹp đẽ hơn nếu ta biết nhìn nó bằng trái tim trong trẻo.
+  </p>
+</section>
+
+<section>
+  <h2>Thông tin thú vị</h2>
+  <div class="fun-facts">
+    <div class="fact-box">
+      <strong>Năm xuất bản</strong><br><br>
+      Tác phẩm được xuất bản lần đầu vào năm 1908 và nhanh chóng
+      trở thành một trong những cuốn sách thiếu nhi kinh điển nhất.
+    </div>
+    <div class="fact-box">
+      <strong>Chuyển thể</strong><br><br>
+      Anne Tóc Đỏ đã được chuyển thể thành nhiều phiên bản phim,
+      anime Nhật Bản và kịch sân khấu trong suốt hơn một thế kỷ.
+    </div>
+    <div class="fact-box">
+      <strong>Giá trị văn học</strong><br><br>
+      Nhân vật Anne trở thành biểu tượng của tuổi thơ,
+      trí tưởng tượng và tinh thần lạc quan trong văn học Canada.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Trích dẫn hay</h2>
+  <blockquote>
+    “Ngày mai luôn là một ngày mới, không có sai lầm nào trong đó cả.”
+  </blockquote>
+</section>
+
+</main>
+
+<footer>
+  Trang web giới thiệu tác phẩm – Anne Tóc Đỏ
+</footer>
+
+</body>
+</html>
+
+
